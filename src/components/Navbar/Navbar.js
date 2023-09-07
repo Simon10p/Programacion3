@@ -8,16 +8,22 @@ function Navbar() {
                 </div>
                 <ul>
                     <li>
-                        <a href="./home.html">Home</a>
+                        <Link to="/" >Home</Link>
                     </li>
                     <li>
-                        <a href="./generos.html">Generos</a>
+                        <Link to="/verTodasPeliculas">Generos</Link>
                     </li>
                     <li>
-                        <a href="./favoritos.html">Favoritos</a>
+                        <Link to="/verTodasSeries">Favoritos</Link>
+                    </li>
+                    <li>
+                        <Link to="/favoritos">Favoritos</Link>
+                    </li>
+                    <li>
+                        <Link to="/detalle/:id">Favoritos</Link>
                     </li>
                 </ul>
-                <form className="iBusqueda" action="./busqueda.html" method="get">
+                <form className="iBusqueda" action="/busqueda" method="get">
                     <input
                         className="search"
                         type="search"
