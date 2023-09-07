@@ -23,18 +23,7 @@ function Navbar() {
                         <Link to="/detalle/:id">Favoritos</Link>
                     </li>
                 </ul>
-                <form className="iBusqueda" action="/busqueda" method="get">
-                    <input
-                        className="search"
-                        type="search"
-                        name="busqueda"
-                        placeholder="Buscar"
-                        value=""
-                    />
-                    <button type="submit">
-                        <img src="./fotos/lupita.jpg" alt="" />
-                    </button>
-                </form>
+                
             </header>
         </nav>
     );
