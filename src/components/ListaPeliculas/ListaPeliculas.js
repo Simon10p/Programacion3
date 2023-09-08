@@ -1,5 +1,7 @@
 import React, {Component} from "react";
 import MovieCard from "../MovieCard/MoviesCard"
+
+
 class ListaPelicula extends Component{
     constructor(props){
         super(props)
@@ -19,6 +21,12 @@ class ListaPelicula extends Component{
         <section className="container_padre"  >
         <h1 id={this.state.data.title}> </h1>
         <div className={this.state.data.title}><MovieCard data={data} />    </div>
+            <Filtro filtrar={(texto) => this.filtrarSeries(texto)}
+        
+                // this.state.data.map(function(unaSerie){
+                //      return <MovieCard key={ unPersonaje.id } datosPersonaje={ unPersonaje }/>
+                //     })
+                 />
         </section>
     }
 }
