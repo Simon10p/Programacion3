@@ -7,8 +7,7 @@ function Busqueda(){
         <section>
             {/* Cambiar Buqueda al query de la Url (Lo que busca el usuario) */}
             <h1>Resultados de Busqueda</h1>
-            <Navbar/>
-            <Footer/>
+          
         </section>
 
     )

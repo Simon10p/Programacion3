@@ -1,6 +1,6 @@
 import React, {Component} from "react";
-import MovieCard from "../MovieCard/MoviesCard"
-class ListaPelicula extends Component{
+import SeriesCard from "../SeriesCard/SeriesCard";
+class ListaSeries extends Component{
     constructor(props){
         super(props)
         this.state({
@@ -8,12 +8,10 @@ class ListaPelicula extends Component{
         })
     }
     componentDidMount(){
-    fetch(`https://api.themoviedb.org/3/movie/popular?api_key=2a3601e42fea0b8cec36fb4c1999c023&language=en-US&page=1`)
+    fetch(`https://api.themoviedb.org/3/tv/popular?api_key=2a3601e42fea0b8cec36fb4c1999c023&language=en-US&page=1`)
         .then(response => Response.json())
         .then(datos => this.setState(
-            {
-                data:datos,
-            }
+            {data:datos}
         ))
         .catch(error => console.log(error))
     }
@@ -25,11 +23,11 @@ class ListaPelicula extends Component{
             :
             <div>
             <h1 id={this.state.data.title}> </h1>
-            <div><MovieCard data={this.state.data} /></div>
+            <div className={this.state.data.title}><SeriesCard data={this.state.data} /></div>
             </div>}
         </section>
         )
     }
 }
-export default ListaPelicula;
+export default ListaSeries;
 
