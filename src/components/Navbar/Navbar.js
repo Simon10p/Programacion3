@@ -5,7 +5,7 @@ function Navbar() {
         <nav>
             <header className="containHeader">
                 <div>
-                    <img src="./fotos/nuevo logo.jpeg" class="logo" />
+                    <img src="./fotos/nuevo logo.jpeg" className="logo" />
                 </div>
                 <ul>
                     <li>
