@@ -1,5 +1,7 @@
 import React, {Component} from "react";
 import MovieCard from "../MovieCard/MoviesCard"
+
+
 class ListaPelicula extends Component{
     constructor(props){
         super(props)
