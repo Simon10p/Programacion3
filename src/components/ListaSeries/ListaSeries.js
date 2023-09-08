@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import SeriesCard from "../SeriesCard/SeriesCard";
+
 class ListaSeries extends Component{
     constructor(props){
         super(props)
@@ -15,6 +16,18 @@ class ListaSeries extends Component{
         ))
         .catch(error => console.log(error))
     }
+    filtrarSeries(textoAFiltrar){
+            let SeriesFiltradas = this.state.data.filter(function(unSerie){
+                return unSeries.name.includes(textoAFiltrar) //includes retorna TRUE o FALSE
+            })
+    
+            this.setState({
+                data: SeriesFiltradas,
+            })
+    
+        }
+    
+
     render(){
         return(
         <section className="container_padre"  >
@@ -25,6 +38,12 @@ class ListaSeries extends Component{
             <h1 id={this.state.data.title}> </h1>
             <div className={this.state.data.title}><SeriesCard data={this.state.data} /></div>
             </div>}
+            <Filtro filtrar={(texto) => this.filtrarSeries(texto)} />
+                { 
+                   this.state.data.map(function(unPersonaje){
+                    return <SeriesCard key={ unSerie.id } datosSerie={ unSerie }/>
+                   })
+                }
         </section>
         )
     }

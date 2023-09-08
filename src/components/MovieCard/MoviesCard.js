@@ -7,9 +7,9 @@ function MovieCard(props) {
     props.data.map(pelicula => {
   
     <article class = "container">
-        <img src="https://image.tmdb.org/t/p/w500/${pelicula.poster_path}"  alt="Foto ${pelicula.original_title}" className="foto-home" />
-        <p> ${pelicula.original_title} </p>
-        <p>${pelicula.release_date}</p>
+        <img src={props.data.img}  alt="Foto ${pelicula.original_title}" className="foto-home" />
+        <p> ${props.data.original_title} </p>
+        <p>${props.data.descripcion}</p>
     </article>
     })
     )

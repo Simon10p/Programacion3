@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import MovieCard from "../MovieCard/MoviesCard"
+import Filtro from "../filtro/filtro";
 
 
 class ListaPelicula extends Component{
@@ -19,6 +20,17 @@ class ListaPelicula extends Component{
         ))
         .catch(error => console.log(error))
     }
+    filtrarPeliculas(textoAFiltrar){
+        let PeliculasFiltradas = this.state.data.filter(function(unSerie){
+            return unPelicula.name.includes(textoAFiltrar) //includes retorna TRUE o FALSE
+        })//.name?
+
+        this.setState({
+            data: PeliculasFiltradas,
+        })
+
+    }
+
     render(){
         return(
         <section className="container_padre"  >
@@ -29,8 +41,16 @@ class ListaPelicula extends Component{
             <h1 id={this.state.data.title}> </h1>
             <div><MovieCard data={this.state.data} /></div>
             </div>}
+
+            <Filtro filtrar={(texto) => this.filtrarPeliculas(texto)} />
+                { 
+                   this.state.data.map(function(unPelicula){
+                    return <MoviesCard key={ unPelicula.id } datosPelicula={ unPelicula }/>
+                   })
+                }
         </section>
         )
+        
     }
 }
 export default ListaPelicula;

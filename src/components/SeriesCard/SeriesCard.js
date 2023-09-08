@@ -7,9 +7,9 @@ function SeriesCard(props) {
     props.data.map(serie => {
     <article class = "container">
         <a href="./detalle-pelis.html?movie_id=${id}">
-        <img src="${img}"  alt="Foto ${pelicula.original_title}" className="foto-home" /></a>
-        <p> ${serie.original_title} </p>
-        <p>${serie.release_date}</p>
+        <img src= {props.data.img}  alt="Foto ${pelicula.original_title}" className="foto-home" /></a> //props .data o .serie?
+        <p> {props.data.original_title} </p>
+        <p>{props.data.descripcion}</p>
     </article>
     })
     )
