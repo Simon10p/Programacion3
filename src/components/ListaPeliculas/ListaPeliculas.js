@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import MovieCard from "../MovieCard/MoviesCard"
-import Filtro from "../filtro/filtro";
+import Filtro from "../Filtro/Filtro";
 
 
 class ListaPelicula extends Component{

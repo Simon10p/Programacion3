@@ -1,6 +1,6 @@
 import ListaPelicula from "../../components/ListaPeliculas/ListaPeliculas";
 import React from "react";
-import Filtro from "../../components/filtro/filtro";
+import Filtro from "../../components/Filtro/Filtro";
 
 function VerPeliculas(){
     <React.Fragment>
