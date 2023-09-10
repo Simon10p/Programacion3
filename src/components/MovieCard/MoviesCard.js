@@ -13,8 +13,10 @@ class MovieCard extends Component {
 
     componentDidMount(){
        let recuperoStorage = localStorage.getItem('favoritos')
+
        if (recuperoStorage !== null){
          let favoritos = JSON.parse(recuperoStorage);
+         
          if(favoritos.includes(this.props.data.id)){
             this.setState({
                 textoBoton: "Quitar de favoritos"
@@ -26,13 +28,31 @@ class MovieCard extends Component {
 
     ModificarFavoritos(id){
         let favoritos = [];
-        favoritos.push(id);
-        let favoritosString = JSON.stringify(favoritos);
-        localStorage.setItem('favoritos', favoritosString)
 
-        this.setState({
-            textoBoton: "Quitar de favoritos"
-        })
+        let recuperoStorage = localStorage.getItem('favoritos')
+        
+       if (recuperoStorage !== null){
+            favoritos = JSON.parse(recuperoStorage)
+       }
+
+       
+       if(favoritos.includes(id)){
+            favoritos = favoritos.filter(unId => unId !== id )
+
+            this.setState({
+                textoBoton: "Agregar a favoritos"
+            })
+       } else {
+            favoritos.push(id);
+            
+            this.setState({
+                textoBoton: "Quitar de favoritos"
+            })
+       }
+
+       let favoritosString = JSON.stringify(favoritos);
+            localStorage.setItem('favoritos', favoritosString)
+       
     }
     
 
