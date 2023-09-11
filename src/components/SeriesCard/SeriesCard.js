@@ -42,17 +42,17 @@ ModificarFavoritos(id){
 
 
     render(){
+        console.log(this.props.datosSeries)
+        console.log("aca arriba")
         return(
-            this.props.data.map(serie => {
                 <article class = "container">
                     <a href="./detalle-pelis.html?movie_id=${id}">
-                    <img src= {serie.img}  alt="Foto ${pelicula.original_title}" className="foto-home" /></a> //props .data o .serie?
-                    <button onClick={()=>this.ModificarFavoritos(serie.id)} type='button'>{this.state.textoBoton}</button>
-                    <p> {serie.original_title} </p>
-                    <p>{serie.descripcion}</p>
+                    <img src= ""  alt="Foto" className="foto-home" /></a> //props .data o .serie?
+                    <button onClick={()=>this.ModificarFavoritos(this.props.key)} type='button'>{this.state.textoBoton}</button>
+                    <p> {this.props.datosSerie.original_title} </p>
+                    <p>{this.props.datosSerie.descripcion}</p>
                 </article>
-                })
-        )
+                )
     }
 }
 export default SeriesCard

@@ -13,7 +13,7 @@ class ListaSeries extends Component{
     fetch(`https://api.themoviedb.org/3/tv/popular?api_key=2a3601e42fea0b8cec36fb4c1999c023&language=en-US&page=1`)
         .then(response => response.json())
         .then(datos => this.setState(
-            {data:datos}
+            {data:datos.results}
         ))
         .catch(error => console.log(error))
     }
@@ -43,7 +43,7 @@ class ListaSeries extends Component{
                         <div>
                             <Filtro filtrar={(texto) => this.filtrarSeries(texto)} />
                             {this.state.data.map((unSerie) => (
-                                <SeriesCard key={unSerie.id} datosSerie={unSerie} />
+                                <SeriesCard key={unSerie.id} datosSerie={unSerie} img={unSerie.poster_path} />
                             ))}
                         </div>
                     )}

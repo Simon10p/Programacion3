@@ -61,14 +61,12 @@ class MovieCard extends Component {
         console.log("acaaaaaaa")
     return(
         <div>
-        {this.props.datosPelicula.map((movie) => {
             <article class = "container">
-        <img src="" alt={movie.title} className="foto-home" />
-        <button onClick={()=>this.ModificarDeFavoritos(movie.id)} type='button'>{movie.textoBoton}</button>
-        <p> {movie.title} </p>
-        <p>{movie.descripcion}</p>
+        <img src="" alt={this.props.datosPelicula.title} className="foto-home" />
+        <button onClick={()=>this.ModificarDeFavoritos(this.props.key)} type='button'>{this.state.textoBoton}</button>
+        <p> {this.props.datosPelicula.title} </p>
+        <p>{this.props.datosPelicula.descripcion}</p>
             </article>
-        })}
         </div>
   
     )
