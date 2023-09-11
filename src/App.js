@@ -23,10 +23,10 @@ function App() {
 <Route path="/verTodasPeliculas" component={VerPeliculas} />
 <Route path="/verTodasSeries" component={VerSeries} />
 <Route path="/detalleSerie/:id" component={DetalleSerie} />
+<Route path="/detallePelicula/:id" component={DetallePelicula} />
 <Route path="/favoritos" component={Favoritos} />
 <Route path="/notFound" component={NotFound} />
 <Route path="/cargando" component={Cargando} />
-<Route path="/detallePelicula/:id" component={DetallePelicula} />
 </Switch>
 <Footer/>
   </React.Fragment>

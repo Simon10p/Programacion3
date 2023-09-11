@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import "./SeriesCards.css"
-import Link from "react-router-dom/cjs/react-router-dom"
+import { Link } from "react-router-dom";
 
 let img = "https://image.tmdb.org/t/p/w500/"
 
@@ -24,7 +24,7 @@ componentDidMount(){
     let recuperoStorage = localStorage.getItem('favoritos')
     if (recuperoStorage !== null){
       let favoritos = JSON.parse(recuperoStorage);
-      if(favoritos.includes(this.props.data.id)){
+      if(favoritos.includes(this.props.key)){
          this.setState({
              textoBoton: "Quitar de favoritos"
          })
@@ -51,7 +51,7 @@ ModificarFavoritos(id){
         return(
                 <article className = "container">
                     
-                    <Link to={`/detalleSerie/${this.props.key}`} ><img src= {img + this.props.datosSerie.poster_path}  alt="Foto" className="foto-home" /></Link> 
+                    <Link to={`/detalleSerie/${this.props.datosSerie.id}`} ><img src= {img + this.props.datosSerie.poster_path}  alt="Foto" className="foto-home" /></Link> 
                     <button onClick={()=>this.ModificarFavoritos(this.props.key)} type='button'>{this.state.textoBoton}</button>
                     <p> {this.props.datosSerie.name} </p>
                     <p>{this.props.datosSerie.overview}</p>

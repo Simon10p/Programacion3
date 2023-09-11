@@ -4,7 +4,7 @@ function ScreenPelicula(props){
     return(
         <section className="detalleSerie">
             {/* Cambiar La pelicula por el query de la Url (Nombre de la serie/pelicula) */}
-            <DetalleSerie />
+            <DetallePelicula id = {id} />
         </section>
 
     )

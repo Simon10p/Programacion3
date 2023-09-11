@@ -42,8 +42,8 @@ class ListaSeries extends Component{
                         ></iframe>
                     ) : (
                         <React.Fragment>
+                            <h1>Series mas valoradas</h1>
                         <div>
-                           
                             {this.state.data.map((unSerie) => (
                                 <SeriesCard key={unSerie.id} datosSerie={unSerie} img={unSerie.poster_path} />
                             ))}

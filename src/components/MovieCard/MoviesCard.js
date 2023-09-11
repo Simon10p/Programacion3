@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import "./MoviesCard.css"
-import Link from "react-router-dom/cjs/react-router-dom"
+import { Link } from "react-router-dom";
 // falta linkear al detalle
 
 let img = "https://image.tmdb.org/t/p/w500/"
@@ -21,7 +21,7 @@ class MovieCard extends Component {
        if (recuperoStorage !== null){
          let favoritos = JSON.parse(recuperoStorage);
          
-         if(favoritos.includes(this.props.data.id)){
+         if(favoritos.includes(this.props.key)){
             this.setState({
                 textoBoton: "Quitar de favoritos"
             })
@@ -65,19 +65,15 @@ class MovieCard extends Component {
         console.log("acaaaaaaa")
       
     return(
-        <div>
-            <article className = "container">
-        <Link to ={`/detalle/${this.props.key}`}><img src= {img + this.props.img} alt={this.props.datosPelicula.title} className="foto-home" /></Link>
-        <button onClick={()=>this.ModificarDeFavoritos(this.props.key)} type='button'>{this.state.textoBoton}</button>
-        <p> {this.props.datosPelicula.title} </p>
-        <p>{this.props.datosPelicula.overview}</p>
-            </article>
-        </div>
-  
+        
+        <article className = "container">
+            <Link to ={`/detallePelicula/${this.props.datosPelicula.id}`}><img src= {img + this.props.img} alt={this.props.datosPelicula.title} className="foto-home" /></Link>
+            <button onClick={()=>this.ModificarDeFavoritos(this.props.key)} type='button'>{this.state.textoBoton}</button>
+            <p> {this.props.datosPelicula.title} </p>
+            <p>{this.props.datosPelicula.overview}</p>
+        </article>
     )
 }
 }
 export default MovieCard
 
-
-//     let img = `https://image.tmdb.org/t/p/w500/${path}`
