@@ -9,7 +9,7 @@ function Footer() {
     <div className="footerNombres">
        <div className="nombres">Simon Diez Peña </div>
        <div className="nombres">Nicolas Shakalis</div>
-       <div className="nombres">Nicolas Villalonga</div>
+       <div className="nombres">Mateo Podetti</div>
     </div>
     <p>© 2022 Peliseries todos los derechos reservados.</p>
     </footer>
