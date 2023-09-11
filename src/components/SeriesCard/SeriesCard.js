@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 
+
 class SeriesCard extends Component {
     constructor(props){
         super(props);
@@ -42,15 +43,15 @@ ModificarFavoritos(id){
 
 
     render(){
-        console.log(this.props.datosSeries)
+        console.log(this.props.datosSerie)
         console.log("aca arriba")
         return(
                 <article class = "container">
                     <a href="./detalle-pelis.html?movie_id=${id}">
-                    <img src= ""  alt="Foto" className="foto-home" /></a> //props .data o .serie?
+                    <img src= {this.props.datosSerie.poster_path}  alt="Foto" className="foto-home" /></a> 
                     <button onClick={()=>this.ModificarFavoritos(this.props.key)} type='button'>{this.state.textoBoton}</button>
-                    <p> {this.props.datosSerie.original_title} </p>
-                    <p>{this.props.datosSerie.descripcion}</p>
+                    <p> {this.props.datosSerie.name} </p>
+                    <p>{this.props.datosSerie.overview}</p>
                 </article>
                 )
     }

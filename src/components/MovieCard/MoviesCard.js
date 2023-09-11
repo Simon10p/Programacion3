@@ -65,7 +65,7 @@ class MovieCard extends Component {
         <img src="" alt={this.props.datosPelicula.title} className="foto-home" />
         <button onClick={()=>this.ModificarDeFavoritos(this.props.key)} type='button'>{this.state.textoBoton}</button>
         <p> {this.props.datosPelicula.title} </p>
-        <p>{this.props.datosPelicula.descripcion}</p>
+        <p>{this.props.datosPelicula.overview}</p>
             </article>
         </div>
   
