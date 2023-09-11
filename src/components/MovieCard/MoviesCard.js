@@ -57,15 +57,23 @@ class MovieCard extends Component {
     
 
     render(){
+        console.log(this.props.data)
     return(
+        <div>
+        {this.props.data.map((movie) => (
+            <article class = "container">
+        <img src="" alt={movie.title} className="foto-home" />
+        <button onClick={()=>this.ModificarDeFavoritos(movie.id)} type='button'>{movie.textoBoton}</button>
+        <p> {movie.title} </p>
+        <p>{movie.descripcion}</p>
+            </article>
+        ))}
+        </div>
   
-    <article class = "container">
-        <img src={this.props.data.img}  alt={this.props.data.original_title} className="foto-home" />
-        <button onClick={()=>this.ModificarDeFavoritos(this.props.data.id)} type='button'>{this.state.textoBoton}</button>
-        <p> {this.props.data.original_title} </p>
-        <p>{this.props.data.descripcion}</p>
-    </article>
     )
 }
 }
 export default MovieCard
+
+
+//     let img = `https://image.tmdb.org/t/p/w500/${path}`
