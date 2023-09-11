@@ -4,6 +4,7 @@ import Filtro from "../../components/Filtro/Filtro";
 
 function VerPeliculas(){
     <React.Fragment>
+        <Filtro filtrar={(texto) => this.filtrarPeliculas(texto)} />
         <ListaPelicula />
     </React.Fragment>
 

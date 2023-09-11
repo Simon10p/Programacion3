@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import SeriesCard from "../SeriesCard/SeriesCard";
 import Filtro from "../Filtro/Filtro";
+import "./ListaSeries.css"
 
 class ListaSeries extends Component{
     constructor(props){
@@ -40,12 +41,14 @@ class ListaSeries extends Component{
                             allowFullScreen
                         ></iframe>
                     ) : (
+                        <React.Fragment>
                         <div>
-                            <Filtro filtrar={(texto) => this.filtrarSeries(texto)} />
+                           
                             {this.state.data.map((unSerie) => (
                                 <SeriesCard key={unSerie.id} datosSerie={unSerie} img={unSerie.poster_path} />
                             ))}
                         </div>
+                        </React.Fragment>
                     )}
                 </section>
             );

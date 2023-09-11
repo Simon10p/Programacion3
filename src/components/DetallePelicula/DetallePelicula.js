@@ -1,7 +1,7 @@
 import React, {Component} from "react";
-import "./DetalleSerie.css"
+import "./DetallePelicula.css"
 
-class DetalleSerie extends Component{
+class DetallePelicula extends Component{
 
     constructor(props){
         super(props)
@@ -41,4 +41,4 @@ class DetalleSerie extends Component{
         )
     }
 }
-export default DetalleSerie;
+export default DetallePelicula;

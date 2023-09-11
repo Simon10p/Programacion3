@@ -1,5 +1,9 @@
 import React, {Component} from 'react';
+import "./MoviesCard.css"
+import Link from "react-router-dom/cjs/react-router-dom"
 // falta linkear al detalle
+
+let img = "https://image.tmdb.org/t/p/w500/"
 
 
 class MovieCard extends Component {
@@ -59,10 +63,11 @@ class MovieCard extends Component {
     render(){
         console.log(this.props.datosPelicula)
         console.log("acaaaaaaa")
+      
     return(
         <div>
-            <article class = "container">
-        <img src="" alt={this.props.datosPelicula.title} className="foto-home" />
+            <article className = "container">
+        <Link to ={`/detalle/${this.props.key}`}><img src= {img + this.props.img} alt={this.props.datosPelicula.title} className="foto-home" /></Link>
         <button onClick={()=>this.ModificarDeFavoritos(this.props.key)} type='button'>{this.state.textoBoton}</button>
         <p> {this.props.datosPelicula.title} </p>
         <p>{this.props.datosPelicula.overview}</p>

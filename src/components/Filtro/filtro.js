@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import "./filtro.css"
 
 class Filtro extends Component{
 

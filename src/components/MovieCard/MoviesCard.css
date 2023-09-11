@@ -13,7 +13,11 @@
     border-radius: 10px;
 }
 
-.foto-home{
-    width: 55vw;
-    height: 60vh;
+.container{
+    display: flex;
+    flex-direction: column;
+    width:max-content; 
+    height:max-content;
+    margin: 1.1vh 0vw 1.9vh 0vw;
+    align-items: center;
 }

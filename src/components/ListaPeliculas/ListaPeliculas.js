@@ -1,6 +1,8 @@
 import React, {Component} from "react";
 import MovieCard from "../MovieCard/MoviesCard"
 import Filtro from "../Filtro/Filtro";
+import "../ListaPeliculas/ListaPeliculas.css"
+
 class ListaPelicula extends Component{
     constructor(props){
         super(props)
@@ -44,12 +46,16 @@ class ListaPelicula extends Component{
                         allowFullScreen
                     ></iframe>
                 ) : (
+                    <React.Fragment>
+                        <h1>Peliculas mas valoradas</h1>
                     <div>
-                        <Filtro filtrar={(texto) => this.filtrarPeliculas(texto)} />
+                        
                         {this.state.data.map((unPelicula) => (
                             <MovieCard key={unPelicula.id} datosPelicula={unPelicula} img={unPelicula.poster_path} />
                         ))}
                     </div>
+                    </React.Fragment>
+                    
                 )}
             </section>
         );

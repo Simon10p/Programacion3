@@ -1,0 +1,39 @@
+*
+{
+box-sizing: border-box;
+}
+
+body{
+    background-color: black;
+    font-family: 'Poppins', sans-serif;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    width:max-content; 
+    height:max-content;
+    margin: 1.1vh 0vw 1.9vh 0vw;
+    align-items: center;
+}
+
+h1{
+    color: azure;
+}
+
+h2{
+    color: azure;
+}
+
+h3{
+    text-align: center;
+    font-size: x-large;
+    color: azure;
+}
+p{
+    text-align: center;
+    color: azure;
+}
+h4{
+    text-align: center;
+    color: white;
+}

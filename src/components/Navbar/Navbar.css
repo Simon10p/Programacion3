@@ -3,6 +3,27 @@
     width: 100%;
     align-items: center;
 }
+.containHeader div{
+    display: flex;
+    justify-content: center;
+
+}
+
+.containHeader ul{
+    width: 80%;
+    display: flex;
+    list-style-type: none;
+    justify-content: space-evenly;
+    font-weight: 600;
+    font-size: 20px;
+    padding-left: 4%;
+}
+
+.containHeader a{
+    text-decoration: none;
+    color: azure;
+}
+
 .logo{
     height: 7vh;
     width: 14vw;

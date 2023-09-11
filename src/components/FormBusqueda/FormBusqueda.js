@@ -1,5 +1,6 @@
 import { Component } from "react";
 import React from "react";
+import "./FormBusqueda.css"
 
 class FormBusqueda extends Component{
     constructor(props){

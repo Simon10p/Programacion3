@@ -1,5 +1,8 @@
 import React, {Component} from 'react';
+import "./SeriesCards.css"
+import Link from "react-router-dom/cjs/react-router-dom"
 
+let img = "https://image.tmdb.org/t/p/w500/"
 
 class SeriesCard extends Component {
     constructor(props){
@@ -46,9 +49,9 @@ ModificarFavoritos(id){
         console.log(this.props.datosSerie)
         console.log("aca arriba")
         return(
-                <article class = "container">
-                    <a href="./detalle-pelis.html?movie_id=${id}">
-                    <img src= {this.props.datosSerie.poster_path}  alt="Foto" className="foto-home" /></a> 
+                <article className = "container">
+                    
+                    <Link to={`/detalleSerie/${this.props.key}`} ><img src= {img + this.props.datosSerie.poster_path}  alt="Foto" className="foto-home" /></Link> 
                     <button onClick={()=>this.ModificarFavoritos(this.props.key)} type='button'>{this.state.textoBoton}</button>
                     <p> {this.props.datosSerie.name} </p>
                     <p>{this.props.datosSerie.overview}</p>
