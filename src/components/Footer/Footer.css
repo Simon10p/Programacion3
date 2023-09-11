@@ -1,0 +1,36 @@
+.containFooter{
+    display: flex;
+    flex-direction: column;
+    margin: 2.8vh 0vw;
+}
+.containFooter p{
+    font-family: 'Raleway', sans-serif;
+    color: azure;
+    align-self: center;
+}
+
+.tituloFooter{
+    text-align: center;
+    padding: 1.4vh 0vw;
+}
+
+.footerNombres{
+    display: flex;
+    height: 5.6vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.nombres{
+    font-family: 'Raleway', sans-serif;
+    width: 13vw;
+    color:azure;
+    font-size: 20px;
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+}
+.logoFooter{
+    height: 7vh;
+    width: 14vw;
+}
