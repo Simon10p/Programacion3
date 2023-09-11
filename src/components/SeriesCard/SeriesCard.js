@@ -1,4 +1,5 @@
-import React, {component} from 'react';
+import React, {Component} from 'react';
+
 
 class SeriesCard extends Component {
     constructor(props){
@@ -42,15 +43,17 @@ ModificarFavoritos(id){
 
 
     render(){
-        props.data.map(serie => {
-            <article class = "container">
-                <a href="./detalle-pelis.html?movie_id=${id}">
-                <img src= {props.data.img}  alt="Foto ${pelicula.original_title}" className="foto-home" /></a> //props .data o .serie?
-                <button onClick={()=>this.ModificarFavoritos(this.props.data.id)} type='button'>{this.state.textoBoton}</button>
-                <p> {props.data.original_title} </p>
-                <p>{props.data.descripcion}</p>
-            </article>
-            })
+        console.log(this.props.datosSerie)
+        console.log("aca arriba")
+        return(
+                <article class = "container">
+                    <a href="./detalle-pelis.html?movie_id=${id}">
+                    <img src= {this.props.datosSerie.poster_path}  alt="Foto" className="foto-home" /></a> 
+                    <button onClick={()=>this.ModificarFavoritos(this.props.key)} type='button'>{this.state.textoBoton}</button>
+                    <p> {this.props.datosSerie.name} </p>
+                    <p>{this.props.datosSerie.overview}</p>
+                </article>
+                )
     }
 }
 export default SeriesCard

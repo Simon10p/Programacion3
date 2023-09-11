@@ -1,0 +1,32 @@
+.infoPelisTitulos{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.infoPelisTitulos p{
+    display: flex;
+    color: burlywood;
+}
+
+.infoPelisDetalles{
+    display: flex;
+    flex-wrap: nowrap;
+    color:azure;
+    justify-content: space-between;
+    padding: 0, 20vw;
+    margin-left: 10px;
+
+}
+.fotoDetalle{
+    background-color: rgb(66, 66, 66);
+    margin: 3.05vh 3.05vw;
+    width: 20%;
+}
+.fotoDetalle{
+    width: 38vw;
+} 
+.sinopsis{
+    margin-bottom: 0;
+}
+

@@ -1,0 +1,19 @@
+.foto-home:hover{
+    transform: scale(1.10);
+}
+
+.foto-home{
+    width: 18vw;
+    height: 55vh;
+    background-color: rgb(66, 66, 66);
+    flex-direction: row;
+    padding: 5%;
+    margin: 0.7vh 0.976vw 0.7vh 0.976vw;
+    transition: 0.3s;
+    border-radius: 10px;
+}
+
+.foto-home{
+    width: 55vw;
+    height: 60vh;
+}
