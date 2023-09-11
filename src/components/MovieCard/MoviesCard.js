@@ -57,17 +57,18 @@ class MovieCard extends Component {
     
 
     render(){
-        console.log(this.props.data)
+        console.log(this.props.datosPelicula)
+        console.log("acaaaaaaa")
     return(
         <div>
-        {this.props.data.map((movie) => (
+        {this.props.datosPelicula.map((movie) => {
             <article class = "container">
         <img src="" alt={movie.title} className="foto-home" />
         <button onClick={()=>this.ModificarDeFavoritos(movie.id)} type='button'>{movie.textoBoton}</button>
         <p> {movie.title} </p>
         <p>{movie.descripcion}</p>
             </article>
-        ))}
+        })}
         </div>
   
     )

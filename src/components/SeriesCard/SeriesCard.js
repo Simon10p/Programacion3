@@ -46,10 +46,10 @@ ModificarFavoritos(id){
             this.props.data.map(serie => {
                 <article class = "container">
                     <a href="./detalle-pelis.html?movie_id=${id}">
-                    <img src= {this.props.data.img}  alt="Foto ${pelicula.original_title}" className="foto-home" /></a> //props .data o .serie?
-                    <button onClick={()=>this.ModificarFavoritos(this.props.data.id)} type='button'>{this.state.textoBoton}</button>
-                    <p> {this.props.data.original_title} </p>
-                    <p>{this.props.data.descripcion}</p>
+                    <img src= {serie.img}  alt="Foto ${pelicula.original_title}" className="foto-home" /></a> //props .data o .serie?
+                    <button onClick={()=>this.ModificarFavoritos(serie.id)} type='button'>{this.state.textoBoton}</button>
+                    <p> {serie.original_title} </p>
+                    <p>{serie.descripcion}</p>
                 </article>
                 })
         )

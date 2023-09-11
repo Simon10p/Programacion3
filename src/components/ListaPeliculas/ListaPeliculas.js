@@ -29,29 +29,32 @@ class ListaPelicula extends Component{
 
     }
 
-    render(){
+    render() {
+        console.log(this.state.data)
         const { data } = this.state;
-        return(
-        <section className="container_padre"  >
-            {this.state.data.length === 0 ?
-              (<iframe src="https://giphy.com/embed/W22b2eea2XxB6DiTWg" width="280" height="280" frameBorder="0" className="giphy-embed" allowFullScreen></iframe>)
-            :(
-            <div>
-            <h1 id={this.state.data.title}> </h1>
-            <div><MovieCard data={data} /></div>
-            </div>
-        )}
-
-            <Filtro filtrar={(texto) => this.filtrarPeliculas(texto)} />
-                { 
-                   this.state.data.map((unPelicula) => (
-                    <MovieCard key={ unPelicula.id } datosPelicula={ unPelicula } img={unPelicula.poster_path} />
-                   )) 
-                }
-        </section>
-        )
-        
+        return (
+            <section className="container_padre">
+                {this.state.data.length === 0 ? (
+                    <iframe
+                        src="https://giphy.com/embed/W22b2eea2XxB6DiTWg"
+                        width="280"
+                        height="280"
+                        frameBorder="0"
+                        className="giphy-embed"
+                        allowFullScreen
+                    ></iframe>
+                ) : (
+                    <div>
+                        <Filtro filtrar={(texto) => this.filtrarPeliculas(texto)} />
+                        {this.state.data.map((unPelicula) => (
+                            <MovieCard key={unPelicula.id} datosPelicula={unPelicula} img={unPelicula.poster_path} />
+                        ))}
+                    </div>
+                )}
+            </section>
+        );
     }
+    
 }
 export default ListaPelicula;
 
