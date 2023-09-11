@@ -12,16 +12,13 @@ function Navbar() {
                         <Link to="/" >Home</Link>
                     </li>
                     <li>
-                        <Link to="/verTodasPeliculas">Generos</Link>
+                        <Link to="/verTodasPeliculas">Peliculas</Link>
                     </li>
                     <li>
-                        <Link to="/verTodasSeries">Favoritos</Link>
+                        <Link to="/verTodasSeries">Series</Link>
                     </li>
                     <li>
                         <Link to="/favoritos">Favoritos</Link>
-                    </li>
-                    <li>
-                        <Link to="/detalle/:id">Favoritos</Link>
                     </li>
                 </ul>
                 

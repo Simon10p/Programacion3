@@ -60,7 +60,7 @@ class MovieCard extends Component {
     return(
   
     <article class = "container">
-        <img src={this.props.data.img}  alt="Foto ${pelicula.original_title}" className="foto-home" />
+        <img src={this.props.data.img}  alt={this.props.data.original_title} className="foto-home" />
         <button onClick={()=>this.ModificarDeFavoritos(this.props.data.id)} type='button'>{this.state.textoBoton}</button>
         <p> {this.props.data.original_title} </p>
         <p>{this.props.data.descripcion}</p>
