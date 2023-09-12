@@ -11,7 +11,6 @@ class MovieCard extends Component {
         super(props);
         this.state = {
             textoBoton: "Agregar a favoritos",
-            personajes : [],
         }
     }
 
@@ -68,7 +67,7 @@ class MovieCard extends Component {
         
         <article className = "container">
             <Link to ={`/detallePelicula/${this.props.datosPelicula.id}`}><img src= {img + this.props.img} alt={this.props.datosPelicula.title} className="foto-home" /></Link>
-            <button onClick={()=>this.ModificarDeFavoritos(this.props.key)} type='button'>{this.state.textoBoton}</button>
+            <button onClick={()=>this.ModificarFavoritos(this.props.key)} type='button'>{this.state.textoBoton}</button>
             <p> {this.props.datosPelicula.title} </p>
             <p>{this.props.datosPelicula.overview}</p>
         </article>

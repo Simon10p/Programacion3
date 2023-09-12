@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import SeriesCard from "../SeriesCard/SeriesCard";
 import "./ListaSeries.css";
-//import Filtro from '../Filtro/Filtro';
+import Filtro from '../Filtro/Filtro';
 
 class ListaSeries extends Component{
     constructor(props){
