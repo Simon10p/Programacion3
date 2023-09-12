@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import "./filtro.css"
+import "./Filtro.css"
 
 class Filtro extends Component{
 
@@ -8,6 +8,12 @@ class Filtro extends Component{
         this.state ={
             textoIngresado: ''
         }
+    }
+
+    controlarEnvio(evento) {
+        evento.preventDefault();
+        console.log("No me mandé");
+        return true
     }
 
     guardarDatosDelInput(eventoEnElInput){
@@ -24,11 +30,12 @@ class Filtro extends Component{
 render(){
         // console.log(this.props);
         return(
+            <div className="formsBusqueda">
             <form action="" method='GET' onSubmit={(e) => this.controlarEnvio(e)}>
-                <label htmlFor="">Texto a filtrar: </label>
-                <input type="text" name='filtro' onChange={(e)=>this.guardarDatosDelInput(e)} value={this.state.textoIngresado} />
+                <input type="text" name='filtro' placeholder="que queres filtrar?" onChange={(e)=>this.guardarDatosDelInput(e)} value={this.state.textoIngresado} />
                 <button type='submit'>Filtrar</button>
             </form>
+            </div>
         )
     }
 

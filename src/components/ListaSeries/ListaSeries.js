@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import SeriesCard from "../SeriesCard/SeriesCard";
-import Filtro from "../Filtro/Filtro";
-import "./ListaSeries.css"
+import "./ListaSeries.css";
+//import Filtro from '../Filtro/Filtro';
 
 class ListaSeries extends Component{
     constructor(props){
@@ -20,7 +20,7 @@ class ListaSeries extends Component{
     }
     filtrarSeries(textoAFiltrar){
             let SeriesFiltradas = this.state.data.filter(unSeries =>{
-                return unSeries.name.includes(textoAFiltrar) //includes retorna TRUE o FALSE
+                return unSeries.name.includes(textoAFiltrar) 
             })
     
             this.setState({

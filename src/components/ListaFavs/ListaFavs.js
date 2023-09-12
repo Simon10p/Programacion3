@@ -1,9 +1,13 @@
 import React, {Component} from 'react';
+import MovieCard from '../MovieCard/MoviesCard';
 import "ListaFavs.css"
 
 class ListaFavs extends Component {
     constructor(props){
         super(props);
+        this.state = {
+            Favs: []
+        }
     }
 
     componentDidMount(){
@@ -12,20 +16,26 @@ class ListaFavs extends Component {
  
         if (recuperoStorage !== null){
           let favoritos = JSON.parse(recuperoStorage);
+          infoMultimedia = favoritos
           
           if(favoritos.includes(this.props.data.id)){
              this.setState({
                  textoBoton: "Quitar de favoritos"
              })
+         
+             
+
+             favoritos.map((id) => {
+                fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=5d8d9a4eaf9e1d9b0b7f27344d895a3e&language=es-ES`)
+                .then(response => response.json())
+                .then( Favs => { 
+                    let listaFavoritos = this.state.Favsavs;
+                    listaFavoritos.push(Favs);
+                    this.setState({Favs: listaFavoritos});
+                } )
+                .catch( error => console.log(error) )
+            })
          }
-         fetch(`https://api.themoviedb.org/3/movie/popular?api_key=2a3601e42fea0b8cec36fb4c1999c023&language=en-US&page=1`)
-        .then(response => Response.json())
-        .then(datos => this.setState(
-            {
-                data:datos,
-            }
-        ))
-        .catch(error => console.log(error))
         }
      }
 
