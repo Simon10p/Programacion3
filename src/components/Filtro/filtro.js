@@ -32,7 +32,7 @@ render(){
         return(
             <div className="formsBusqueda">
             <form action="" method='GET' onSubmit={(e) => this.controlarEnvio(e)}>
-                <input type="text" name='filtro' placeholder="que queres filtrar?" onChange={(e)=>this.guardarDatosDelInput(e)} value={this.state.textoIngresado} />
+                <input type="text" name='filtro' placeholder="texto a filtrar" onChange={(e)=>this.guardarDatosDelInput(e)} value={this.state.textoIngresado} />
                 <button type='submit'>Filtrar</button>
             </form>
             </div>

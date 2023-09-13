@@ -1,0 +1,25 @@
+.iBusqueda {
+    text-align: center;
+    margin: 20px;
+  }
+  
+  .busqueda {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  
+  button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }

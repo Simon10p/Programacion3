@@ -1,4 +1,5 @@
 import React from "react";
+import Buscar from "../FormularioBusqueda/FormularioBusqueda";
 import { Link } from  'react-router-dom';
 import "./Navbar.css"
 
@@ -25,7 +26,7 @@ function Navbar() {
                         <Link to="/favoritos">Favoritos</Link>
                     </li>
                 </ul>
-                
+                <Buscar/>
             </header>
         </nav>
     );

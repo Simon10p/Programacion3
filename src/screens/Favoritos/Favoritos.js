@@ -6,6 +6,7 @@ function Favoritos(){
         <React.Fragment>
         <h1>Favoritos</h1>
         <ListaFavs></ListaFavs>
+
       </React.Fragment>
     )
 }
