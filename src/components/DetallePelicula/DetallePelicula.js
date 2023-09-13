@@ -1,8 +1,6 @@
 import React, {Component} from "react";
 import "./DetallePelicula.css"
-
 let img = "https://image.tmdb.org/t/p/w500/"
-
 class DetallePelicula extends Component{
 
     constructor(props){

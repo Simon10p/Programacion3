@@ -55,6 +55,7 @@ ModificarFavoritos(id){
                     <button onClick={()=>this.ModificarFavoritos(this.props.key)} type='button'>{this.state.textoBoton}</button>
                     <p> {this.props.datosSerie.name} </p>
                     <p>{this.props.datosSerie.overview}</p>
+                    
                 </article>
                 )
     }

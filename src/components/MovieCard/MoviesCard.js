@@ -11,7 +11,19 @@ class MovieCard extends Component {
         super(props);
         this.state = {
             textoBoton: "Agregar a favoritos",
+            mas: false
         }
+    }
+    
+    verMas(){
+        this.setState({
+            mas : true
+        })
+    }
+    verMenos(){
+        this.setState({
+            mas : false
+        })
     }
 
     componentDidMount(){
@@ -67,12 +79,23 @@ class MovieCard extends Component {
         
         <article className = "container">
             <Link to ={`/detallePelicula/${this.props.datosPelicula.id}`}><img src= {img + this.props.img} alt={this.props.datosPelicula.title} className="foto-home" /></Link>
-            <button onClick={()=>this.ModificarFavoritos(this.props.key)} type='button'>{this.state.textoBoton}</button>
             <p> {this.props.datosPelicula.title} </p>
-            <p>{this.props.datosPelicula.overview}</p>
+            <button onClick={()=>this.ModificarFavoritos(this.props.key)} type='button'>{this.state.textoBoton}</button>
+            {
+                this.state.mas === false ?
+                (<button onClick={() => this.verMas()}>
+                    Ver sinopsis
+                </button>)
+                :
+                (<div>
+                <p>{this.props.datosPelicula.overview}</p>
+                <button onClick={() => this.verMenos()}>Ver menos </button>
+                </div> )      
+            }
         </article>
     )
 }
 }
 export default MovieCard
+
 
