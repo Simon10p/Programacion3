@@ -10,16 +10,19 @@ class SeriesCard extends Component {
         this.state = {
             textoBoton: "Agregar a favoritos",
             personajes : [],
+            mas : false
         }
     }
-
-
-// function SeriesCard(props) {
-//      let SeriesCard = props.data.map(function(serie){
-//     let path = serie.poster_path
-//     let img = `https://image.tmdb.org/t/p/w500/${path}`
-// })
-// }
+    verMas(){
+        this.setState({
+            mas : true
+        })
+    }
+    verMenos(){
+        this.setState({
+            mas : false
+        })
+    }
 componentDidMount(){
     let recuperoStorage = localStorage.getItem('favoritos')
     if (recuperoStorage !== null){
@@ -52,10 +55,19 @@ ModificarFavoritos(id){
                 <article className = "container">
                     
                     <Link to={`/detalleSerie/${this.props.datosSerie.id}`} ><img src= {img + this.props.datosSerie.poster_path}  alt="Foto" className="foto-home" /></Link> 
-                    <button onClick={()=>this.ModificarFavoritos(this.props.key)} type='button'>{this.state.textoBoton}</button>
                     <p> {this.props.datosSerie.name} </p>
-                    <p>{this.props.datosSerie.overview}</p>
-                    
+                    <button onClick={()=>this.ModificarFavoritos(this.props.key)} type='button'>{this.state.textoBoton}</button>
+                    {
+                this.state.mas === false ?
+                (<button onClick={() => this.verMas()}>
+                    Ver sinopsis
+                </button>)
+                :
+                (<div>
+                <p>{this.props.datosSerie.overview}</p>
+                <button onClick={() => this.verMenos()}>Ver menos </button>
+                </div> )      
+            }
                 </article>
                 )
     }

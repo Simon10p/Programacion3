@@ -20,7 +20,7 @@ class ListaFavs extends Component {
           favoritos = pasarArray
     }
         favoritos.map((id) => {
-        fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=5d8d9a4eaf9e1d9b0b7f27344d895a3e&language=es-ES`)
+        fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=2a3601e42fea0b8cec36fb4c1999c023&language=en-US`)
         .then(response => response.json())
         .then( Favs => { 
             let listaFavoritos = this.state.Favs;
@@ -30,47 +30,7 @@ class ListaFavs extends Component {
         .catch( error => console.log(error) )
         }) 
         // lo de map que agregue no se si esta bien 
-}
-
-// if(favoritos.includes(this.props.data.id)){
-//     this.setState({
-//         textoBoton: "Quitar de favoritos"
-//     })
-
-
-     
-    //  ModificarFavoritos(id){
-    //     let favoritos = [];
-
-    //     let recuperoStorage = localStorage.getItem('favoritos')
-        
-    //    if (recuperoStorage !== null){
-    //         favoritos = JSON.parse(recuperoStorage)
-    //    }
-
-       
-    //    if(favoritos.includes(id)){
-    //         favoritos = favoritos.filter(unId => unId !== id )
-
-    //         this.setState({
-    //             textoBoton: "Agregar a favoritos"
-    //         })
-    //    } else {
-    //         favoritos.push(id);
-            
-    //         this.setState({
-    //             textoBoton: "Quitar de favoritos"
-    //         })
-    //    }
-
-    //    let favoritosString = JSON.stringify(favoritos);
-    //     localStorage.setItem('favoritos', favoritosString)
-
-       // hacer un if o map o filter (?) comparando la lista de la API de peliculas o series con los ids de la lista de favoritos
-       // Mostrar solo la data de las peliculas favoritas --> Como hago esto?
-       
-    // }
-    
+}    
 
     render(){
         return(

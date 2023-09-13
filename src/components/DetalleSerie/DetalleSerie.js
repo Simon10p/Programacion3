@@ -36,7 +36,6 @@ class DetalleSerie extends Component{
             <p className="sinopsis">Sinopsis: </p>
             <span className="infoPelisDetalles">${this.state.infoSerie.overview}</span>
             <div className="proveedores"> <p>Donde mirar:</p></div>
-            <a href="#recomendaciones"><p className=" boton_favs boton_recomendaciones">Ver recomendaciones</p></a>
             <p className="boton_favs boton_favoritos_serie">Agregar a favoritos</p>
            </article>
             </React.Fragment>            

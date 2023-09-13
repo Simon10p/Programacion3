@@ -26,3 +26,12 @@
     margin: 1.1vh 0vw 1.9vh 0vw;
     align-items: center;
 }
+.container button{
+    padding: 10px 20px;
+    background-color: #fff; /* Fondo blanco */
+    color: #000; /* Texto negro */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0.7vh
+}
