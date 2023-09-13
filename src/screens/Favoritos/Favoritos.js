@@ -1,15 +1,11 @@
 import ListaFavs from "../../components/ListaFavs/ListaFavs";
 import React from "react";
-import Filtro from "../../components/Filtro/Filtro";
 
 function Favoritos(){
     return(
         <React.Fragment>
-
         <h1>Favoritos</h1>
-        <ListaFavs>
-
-        </ListaFavs>
+        <ListaFavs></ListaFavs>
       </React.Fragment>
     )
 }
