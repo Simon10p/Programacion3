@@ -24,9 +24,8 @@ class DetalleSerie extends Component{
         .catch(error => console.log(error))
     }
     render(){
-        console.log(this.state.infoSerie)
         return(
-            <React.Fragment>
+            <section className="detallepelis">
         <img src={img + this.state.infoSerie.poster_path} alt = "" className="fotoDetalle"/>
        <article className="infoPelisTitulos">
             <p>Rating: <span className="infoPelisDetalles">  ${this.state.infoSerie.vote_average} </span></p>
@@ -36,9 +35,9 @@ class DetalleSerie extends Component{
             <p className="sinopsis">Sinopsis: </p>
             <span className="infoPelisDetalles">${this.state.infoSerie.overview}</span>
             <div className="proveedores"> <p>Donde mirar:</p></div>
-            <p className="boton_favs boton_favoritos_serie">Agregar a favoritos</p>
-           </article>
-            </React.Fragment>            
+            <button onClick={()=>this.ModificarFavoritos(this.props.datosPelicula.id)} type='button'>{this.state.textoBoton}</button>
+           </article>     
+           </section>      
         )
     }
 }

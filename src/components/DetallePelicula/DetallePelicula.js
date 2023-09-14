@@ -6,6 +6,7 @@ class DetallePelicula extends Component{
     constructor(props){
         super(props)
         this.state ={
+            textoBoton: "Agregar a favoritos",
             infoPelicula: []
 
         }
@@ -35,7 +36,7 @@ class DetallePelicula extends Component{
             <p>Duración:<span className="infoPelisDetalles">{this.state.infoPelicula.runtime} </span></p>
             <p className="sinopsis">Sinopsis:</p>
             <span className="infoPelisDetalles">{this.state.infoPelicula.overview}</span>
-            <p className="boton_favs boton_favoritos_serie">Agregar a favoritos</p>
+            <button onClick={()=>this.ModificarFavoritos(this.props.datosPelicula.id)} type='button'>{this.state.textoBoton}</button>
            </article>
             </section>            
         )

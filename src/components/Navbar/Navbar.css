@@ -25,9 +25,10 @@
 }
 
 .logo{
-    height: 7vh;
+    height: 10vh;
     width: 14vw;
     margin-left: 35%;
+    border-radius: 5px;
 }
 .iBusqueda{
     display: flex;

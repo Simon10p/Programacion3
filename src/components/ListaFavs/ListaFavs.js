@@ -53,7 +53,7 @@ class ListaFavs extends Component {
           <p>No tiene favoritos guardados</p>
          : 
           <React.Fragment>
-         <h1>Tus peliculas favoritos:</h1>
+         <h1>Tus peliculas favoritas:</h1>
           <div>
             {this.state.favorita.map((unPelicula) => (
           <MoviesCard  key={unPelicula.id} datosPelicula={unPelicula} img={unPelicula.poster_path} />

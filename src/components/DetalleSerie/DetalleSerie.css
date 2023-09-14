@@ -29,4 +29,12 @@
 .sinopsis{
     margin-bottom: 0;
 }
-
+.detallepelis button{
+    padding: 10px 20px;
+    background-color: #fff; /* Fondo blanco */
+    color: #000; /* Texto negro */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 25vh
+}

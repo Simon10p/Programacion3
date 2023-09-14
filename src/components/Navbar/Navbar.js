@@ -10,7 +10,7 @@ function Navbar() {
         <nav>
             <header className="containHeader">
                 <div>
-                    <img src="public\img\4467e9a78b04464facf17126f5db913f.png" className="logo" />
+                    <img src="img/4467e9a78b04464facf17126f5db913f.png" className="logo" />
                 </div>
                 <ul>
                     <li>
