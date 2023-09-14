@@ -26,20 +26,22 @@ class DetallePelicula extends Component{
     }
     render(){
         return(
-            <React.Fragment>
+            <section className="detallepelis">
         <img src={img + this.state.infoPelicula.poster_path} alt = "" className="fotoDetalle"/>
        <article className="infoPelisTitulos">
             <p>Rating: <span className="infoPelisDetalles">  {this.state.infoPelicula.vote_average} </span></p>
-            <p className="generos">Genero: </p>
+            <p className="generos_nombre">Genero: </p>
             <p>Año de estreno:  <span className="infoPelisDetalles">  {this.state.infoPelicula.release_date}</span></p>
             <p>Duración:<span className="infoPelisDetalles">{this.state.infoPelicula.runtime} </span></p>
-            <p className="sinopsis">Sinopsis: </p>
+            <p className="sinopsis">Sinopsis:</p>
             <span className="infoPelisDetalles">{this.state.infoPelicula.overview}</span>
-            <div className="proveedores"> <p>Donde mirar:</p></div>
             <p className="boton_favs boton_favoritos_serie">Agregar a favoritos</p>
            </article>
-            </React.Fragment>            
+            </section>            
         )
     }
 }
 export default DetallePelicula;
+
+// <p class="sinopsis">Sinopsis:</p>
+//<span class="infoPelisDetalles">${data.overview}</span>

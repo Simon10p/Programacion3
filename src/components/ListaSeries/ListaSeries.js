@@ -44,9 +44,12 @@ class ListaSeries extends Component{
                         <React.Fragment>
                             <h1>Series mas valoradas</h1>
                         <div>
-                            {this.state.data.map((unSerie) => (
-                                <SeriesCard key={unSerie.id} datosSerie={unSerie} img={unSerie.poster_path} />
-                            ))}
+                            {this.state.data.map((unSerie, idx) => {
+                                if(idx<5){
+                                    return(<SeriesCard key={unSerie.id} datosSerie={unSerie} img={unSerie.poster_path} />)
+                                }
+                            }         
+                            )}
                         </div>
                         </React.Fragment>
                     )}

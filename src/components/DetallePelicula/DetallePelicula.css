@@ -14,7 +14,7 @@
     flex-wrap: nowrap;
     color:azure;
     justify-content: space-between;
-    padding: 0, 20vw;
+    padding: 0, 10vw;
     margin-left: 10px;
 
 }
@@ -27,6 +27,15 @@
     width: 38vw;
 } 
 .sinopsis{
-    margin-bottom: 0;
+    margin-bottom: 0.5vh;
+}
+.detallepelis{
+    display: flex;
+    padding: 0.5vh 0.976vw 0vh 0.694vw;
+
+}
+.detallepelis p{
+    color: azure;
+    font-weight: bold;
 }
 

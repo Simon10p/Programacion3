@@ -21,9 +21,9 @@ class ListaPelicula extends Component{
         .catch(error => console.log(error))
     }
     filtrarPeliculas(textoAFiltrar){
-        let PeliculasFiltradas = this.state.data.filter(function(unPelicula){
+        let PeliculasFiltradas = this.state.data.filter(unPelicula => {
             return unPelicula.name.includes(textoAFiltrar) //includes retorna TRUE o FALSE
-        })//.name?
+        })
 
         this.setState({
             data: PeliculasFiltradas,
@@ -32,8 +32,6 @@ class ListaPelicula extends Component{
     }
 
     render() {
-        console.log(this.state.data)
-        const { data } = this.state;
         return (
             <section className="container_padre">
                 {this.state.data.length === 0 ? (
@@ -49,9 +47,12 @@ class ListaPelicula extends Component{
                     <React.Fragment>
                         <h1>Peliculas mas valoradas</h1>
                     <div> 
-                        {this.state.data.map((unPelicula) => (
-                        <MovieCard key={unPelicula.id} datosPelicula={unPelicula} img={unPelicula.poster_path} />
-                        ))}
+                        {this.state.data.map((unPelicula, idx) => {
+                         if (idx<5){
+                            return( <MovieCard key={unPelicula.id} datosPelicula={unPelicula} img={unPelicula.poster_path} />)
+                         }
+                        } 
+                        )}
                     </div>
                     </React.Fragment>
                     

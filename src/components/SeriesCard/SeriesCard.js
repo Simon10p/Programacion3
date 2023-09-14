@@ -27,7 +27,7 @@ componentDidMount(){
     let recuperoStorage = localStorage.getItem('favoritos')
     if (recuperoStorage !== null){
       let favoritos = JSON.parse(recuperoStorage);
-      if(favoritos.includes(this.props.key)){
+      if(favoritos.includes(this.props.datosSerie.id)){
          this.setState({
              textoBoton: "Quitar de favoritos"
          })
@@ -49,14 +49,11 @@ ModificarFavoritos(id){
 
 
     render(){
-        console.log(this.props.datosSerie)
-        console.log("aca arriba")
         return(
                 <article className = "container">
-                    
                     <Link to={`/detalleSerie/${this.props.datosSerie.id}`} ><img src= {img + this.props.datosSerie.poster_path}  alt="Foto" className="foto-home" /></Link> 
                     <p> {this.props.datosSerie.name} </p>
-                    <button onClick={()=>this.ModificarFavoritos(this.props.key)} type='button'>{this.state.textoBoton}</button>
+                    <button onClick={()=>this.ModificarFavoritos(this.props.datosSerie.id)} type='button'>{this.state.textoBoton}</button>
                     {
                 this.state.mas === false ?
                 (<button onClick={() => this.verMas()}>

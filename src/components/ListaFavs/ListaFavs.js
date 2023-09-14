@@ -8,6 +8,7 @@ class ListaFavs extends Component {
     super(props);
     this.state = {
       favorita: [],
+      favoritaSerie: []
     };
   }
   componentDidMount() {
@@ -41,7 +42,7 @@ class ListaFavs extends Component {
          <h1>Tus favoritos:</h1>
           <div>
             {this.state.favorita.map((unPelicula) => (
-          <MoviesCard  key={unPelicula.id} datosPelicula={unPelicula.favorita} img={unPelicula.poster_path} />
+          <MoviesCard  key={unPelicula.id} datosPelicula={unPelicula} img={unPelicula.poster_path} />
             ))}
             </div> 
           </React.Fragment>       

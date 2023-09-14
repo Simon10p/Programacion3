@@ -12,6 +12,7 @@ class MovieCard extends Component {
         this.state = {
             textoBoton: "Agregar a favoritos",
             stateMas: false
+            
         }
     }
     
@@ -63,7 +64,6 @@ class MovieCard extends Component {
     
 
     render(){
-        console.log(this.props.datosPelicula)
     return(
         
         <article className = "container">
@@ -78,7 +78,6 @@ class MovieCard extends Component {
                 :
                 (<div>
                 <p>{this.props.datosPelicula.overview} </p>
-        
                 <button onClick={() => this.verMenos()}>Ver menos </button>
                 </div> )      
             }
