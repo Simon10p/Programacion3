@@ -19,7 +19,7 @@ class Filtro extends Component{
     guardarDatosDelInput(eventoEnElInput){
         this.setState({
             textoIngresado: eventoEnElInput.target.value
-        }, () => this.props.filtrar(this.state.textoIngresado))
+        }, () => this.props.filtrar(this.props.textoIngresado))
 
      console.log(this.state.textoIngresado);
 
@@ -32,6 +32,7 @@ render(){
         return(
             <div className="formsBusqueda">
             <form action="" method='GET' onSubmit={(e) => this.controlarEnvio(e)}>
+                <label htmlFor=''>Texto a filtrar: </label>
                 <input type="text" name='filtro' placeholder="texto a filtrar" onChange={(e)=>this.guardarDatosDelInput(e)} value={this.state.textoIngresado} />
                 <button type='submit'>Filtrar</button>
             </form>
