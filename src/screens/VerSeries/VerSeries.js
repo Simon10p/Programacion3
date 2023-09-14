@@ -1,35 +1,10 @@
-import Filtro from "../../components/Filtro/Filtro";
-import ListaSeries from "../../components/ListaSeries/ListaSeries";
-import React, {Component} from "react";
+import SeriesComponent from "../../components/VerSeries/VerSeries";
+import React from "react";
 
-class VerSeries extends Component{
-    constructor(){
-        super();
-        this.state ={
-            series : []
-        }
-    }
-
-    componentDidMount(){
-
-    }
-
-    filtrarSeries(textoFiltrado){
-        let seriesFiltradas = this.state.series.filter(function(unPersonaje){
-            return unPersonaje.name.includes(textoFiltrado)
-        })
-
-        this.setState({
-            series: seriesFiltradas
-        })
-    }
-
-    render(){ 
+function VerSeries(){
     return(
-        <React.Fragment>
-        <Filtro filtrar={(texto) => this.filtrarSeries(texto)} />
-       <ListaSeries />
-   </React.Fragment> 
+        <SeriesComponent/>
     )
-}}
+}
+
 export default VerSeries

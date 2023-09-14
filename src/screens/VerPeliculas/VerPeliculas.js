@@ -1,14 +1,10 @@
-import ListaPelicula from "../../components/ListaPeliculas/ListaPeliculas";
+import PeliculasComponent from "../../components/VerPeliculas/VerPeliculas";
 import React from "react";
-import Filtro from "../../components/Filtro/Filtro";
+
 
 function VerPeliculas(){
     return(
-        <React.Fragment>
-        <Filtro filtrar={(texto) => this.filtrarPeliculas(texto)} />
-        <ListaPelicula />
-    </React.Fragment>
-
+        <PeliculasComponent/>
     )
 
 }
