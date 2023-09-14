@@ -34,7 +34,7 @@ class ListaPelicula extends Component{
     render() {
         return (
             <section className="container_padre">
-                {this.state.data.length > 0 ? (
+                {this.state.data.length === 0 ? (
                     <iframe
                         src="https://giphy.com/embed/W22b2eea2XxB6DiTWg"
                         width="280"
