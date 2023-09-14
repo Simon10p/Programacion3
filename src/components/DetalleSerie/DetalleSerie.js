@@ -18,7 +18,10 @@ class DetalleSerie extends Component{
         .then(response => response.json())
         .then(datos => this.setState(
             {
-                infoSerie:datos
+                infoSerie:datos,
+                genero: datos.genres.map((genero,idx)=> {
+                    return( " " + genero.name + " ") 
+                 })
             }
         )
         )
@@ -52,7 +55,7 @@ class DetalleSerie extends Component{
         <img src={img + this.state.infoSerie.poster_path} alt = "" className="fotoDetalle"/>
        <article className="infoPelisTitulos">
             <p>Rating: <span className="infoPelisDetalles">  {this.state.infoSerie.vote_average} </span></p>
-            <p className="generos">Genero: </p>
+            <p className="generos">Genero: <span className="infoPelisDetalles">  {this.state.genero}</span></p>
             <p>Año de estreno:  <span className="infoPelisDetalles">  {this.state.infoSerie.first_air_date}</span></p>
             <p>Temporadas:<span className="infoPelisDetalles">{this.state.infoSerie.number_of_seasons} </span></p>
             <p className="sinopsis">Sinopsis: </p>

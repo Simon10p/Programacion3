@@ -13,7 +13,7 @@ class DetallePelicula extends Component{
     }
     componentDidMount(){
    const id_pelicula = this.props.id
-
+    let generos= []
     fetch(`https://api.themoviedb.org/3/movie/${id_pelicula}?api_key=a3c55e0abc72e6abaa573f83ee40635f&language=en-US`)
         .then(response => response.json())
         .then(datos => 
@@ -21,6 +21,11 @@ class DetallePelicula extends Component{
             {
                 infoPelicula : datos,
                 textoBoton: "Agregar a favoritos",
+                genero: datos.genres.map((genero,idx)=> {
+                   return( " " + genero.name + " ") 
+                }
+                
+                )
             }
         )
         )
@@ -48,14 +53,14 @@ class DetallePelicula extends Component{
        let favoritosString = JSON.stringify(favoritos);
             localStorage.setItem('favoritos', favoritosString)
     }
+    
     render(){
-        
+      
         return(
             <section className="detallepelis">
         <img src={img + this.state.infoPelicula.poster_path} alt = "" className="fotoDetalle"/>
        <article className="infoPelisTitulos">
-            <p>Rating: <span className="infoPelisDetalles">  {this.state.infoPelicula.vote_average} </span></p>
-            <p className="generos_nombre">Genero: </p>
+            <p>Rating: <span className="infoPelisDetalles">  {this.state.genero}</span></p> 
             <p>Año de estreno:  <span className="infoPelisDetalles">  {this.state.infoPelicula.release_date}</span></p>
             <p>Duración:<span className="infoPelisDetalles">{this.state.infoPelicula.runtime} </span></p>
             <p className="sinopsis">Sinopsis:</p>
