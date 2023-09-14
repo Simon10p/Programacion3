@@ -20,12 +20,36 @@ class DetallePelicula extends Component{
             this.setState(
             {
                 infoPelicula : datos,
+                textoBoton: "Agregar a favoritos",
             }
         )
         )
         .catch(error => console.log(error))
     }
+
+    ModificarFavoritos(id){
+        let favoritos = [];
+        let recuperoStorage = localStorage.getItem('favoritos')
+       if (recuperoStorage !== null){
+            favoritos = JSON.parse(recuperoStorage)
+       }       
+       if(favoritos.includes(id)){
+            favoritos = favoritos.filter(unId => unId !== id )
+            this.setState({
+                textoBoton: "Agregar a favoritos"
+            })
+       } else {
+            favoritos.push(id);
+            this.setState({
+                textoBoton: "Quitar de favoritos"
+            })
+       }
+
+       let favoritosString = JSON.stringify(favoritos);
+            localStorage.setItem('favoritos', favoritosString)
+    }
     render(){
+        
         return(
             <section className="detallepelis">
         <img src={img + this.state.infoPelicula.poster_path} alt = "" className="fotoDetalle"/>
@@ -36,7 +60,7 @@ class DetallePelicula extends Component{
             <p>Duración:<span className="infoPelisDetalles">{this.state.infoPelicula.runtime} </span></p>
             <p className="sinopsis">Sinopsis:</p>
             <span className="infoPelisDetalles">{this.state.infoPelicula.overview}</span>
-            <button onClick={()=>this.ModificarFavoritos(this.props.datosPelicula.id)} type='button'>{this.state.textoBoton}</button>
+            <button onClick={()=>this.ModificarFavoritos(this.props.key)} type='button'>{this.state.textoBoton}</button>
            </article>
             </section>            
         )

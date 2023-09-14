@@ -8,7 +8,8 @@ class DetalleSerie extends Component{
     constructor(props){
         super(props)
         this.state ={
-            infoSerie: []
+            infoSerie: [],
+            textoBoton: "Agregar a favoritos"
         }
     }
     componentDidMount(){
@@ -17,25 +18,47 @@ class DetalleSerie extends Component{
         .then(response => response.json())
         .then(datos => this.setState(
             {
-                infoSerie:datos,
+                infoSerie:datos
             }
         )
         )
         .catch(error => console.log(error))
     }
+    ModificarFavoritos(id){
+        let favoritos = [];
+        let recuperoStorage = localStorage.getItem('favoritos')
+       if (recuperoStorage !== null){
+            favoritos = JSON.parse(recuperoStorage)
+       }       
+       if(favoritos.includes(id)){
+            favoritos = favoritos.filter(unId => unId !== id )
+            this.setState({
+                textoBoton: "Agregar a favoritos"
+            })
+       } else {
+            favoritos.push(id);
+            this.setState({
+                textoBoton: "Quitar de favoritos"
+            })
+       }
+
+       let favoritosString = JSON.stringify(favoritos);
+            localStorage.setItem('favoritos', favoritosString)
+    }
+
     render(){
         return(
             <section className="detallepelis">
         <img src={img + this.state.infoSerie.poster_path} alt = "" className="fotoDetalle"/>
        <article className="infoPelisTitulos">
-            <p>Rating: <span className="infoPelisDetalles">  ${this.state.infoSerie.vote_average} </span></p>
+            <p>Rating: <span className="infoPelisDetalles">  {this.state.infoSerie.vote_average} </span></p>
             <p className="generos">Genero: </p>
-            <p>Año de estreno:  <span className="infoPelisDetalles">  ${this.state.infoSerie.first_air_date}</span></p>
-            <p>Temporadas:<span className="infoPelisDetalles">${this.state.infoSerie.number_of_seasons} </span></p>
+            <p>Año de estreno:  <span className="infoPelisDetalles">  {this.state.infoSerie.first_air_date}</span></p>
+            <p>Temporadas:<span className="infoPelisDetalles">{this.state.infoSerie.number_of_seasons} </span></p>
             <p className="sinopsis">Sinopsis: </p>
-            <span className="infoPelisDetalles">${this.state.infoSerie.overview}</span>
+            <span className="infoPelisDetalles">{this.state.infoSerie.overview}</span>
             <div className="proveedores"> <p>Donde mirar:</p></div>
-            <button onClick={()=>this.ModificarFavoritos(this.props.datosPelicula.id)} type='button'>{this.state.textoBoton}</button>
+            <button onClick={()=>this.ModificarFavoritos(this.props.key)} type='button'>{this.state.textoBoton}</button>
            </article>     
            </section>      
         )
