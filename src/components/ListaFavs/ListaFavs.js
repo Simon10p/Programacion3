@@ -13,9 +13,12 @@ class ListaFavs extends Component {
   }
   componentDidMount() {
     let favoritos = [];
+    let favoritaSerie =[];
     let recuperoStorage = localStorage.getItem("favoritos");
-    if (recuperoStorage !== null) {
+    let recuperoStorageSeries = localStorage.getItem("favoritosSeries")
+    if (recuperoStorage !== null && recuperoStorageSeries !== null) {
       favoritos = JSON.parse(recuperoStorage);
+      favoritaSerie = JSON.parse(recuperoStorageSeries)
     }
     favoritos.map((id) => {
       fetch(
@@ -29,24 +32,41 @@ class ListaFavs extends Component {
         })
         .catch(error => console.log(error));
     });
-    // lo de map que agregue no se si esta bien
+    favoritaSerie.map((idSerie) =>{
+      fetch(
+        `https://api.themoviedb.org/3/tv/${idSerie}?api_key=2a3601e42fea0b8cec36fb4c1999c023&language=en-U`
+      )
+      .then((response) => response.json())
+      .then((serieFavorita) => {
+        let listaSeriesFavoritas = this.state.favoritaSerie;
+        listaSeriesFavoritas.push(serieFavorita)
+        this.setState({favoritaSerie:listaSeriesFavoritas})
+      })
+    })
+   
   }
 
   render() {
     return (
       <section className="container_padre">
-        {this.state.favorita.length === 0 ? (
+        {this.state.favorita.length === 0 ? 
           <p>No tiene favoritos guardados</p>
-        ) : (
+         : 
           <React.Fragment>
-         <h1>Tus favoritos:</h1>
+         <h1>Tus peliculas favoritos:</h1>
           <div>
             {this.state.favorita.map((unPelicula) => (
           <MoviesCard  key={unPelicula.id} datosPelicula={unPelicula} img={unPelicula.poster_path} />
             ))}
             </div> 
+            <h1>Tus series favoritas:</h1>
+            <div>
+              {this.state.favoritaSerie.map((unSerie) => ( 
+                <SeriesCard key={unSerie.id} datosSerie={unSerie} img={unSerie.poster_path}></SeriesCard>
+               ))}
+            </div>
           </React.Fragment>       
-        )}
+        }
       </section>
     );
   }

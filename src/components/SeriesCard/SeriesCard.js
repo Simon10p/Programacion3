@@ -24,10 +24,10 @@ class SeriesCard extends Component {
         })
     }
 componentDidMount(){
-    let recuperoStorage = localStorage.getItem('favoritos')
+    let recuperoStorage = localStorage.getItem('favoritosSeries')
     if (recuperoStorage !== null){
-      let favoritos = JSON.parse(recuperoStorage);
-      if(favoritos.includes(this.props.datosSerie.id)){
+      let favoritosSeries = JSON.parse(recuperoStorage);
+      if(favoritosSeries.includes(this.props.datosSerie.id)){
          this.setState({
              textoBoton: "Quitar de favoritos"
          })
@@ -36,18 +36,27 @@ componentDidMount(){
  }
 
 ModificarFavoritos(id){
-    let favoritos = [];
-    favoritos.push(id);
-    let favoritosString = JSON.stringify(favoritos);
-    localStorage.setItem('favoritos', favoritosString)
-    this.setState({
-        textoBoton: "Quitar de favoritos"
-    })
+    let favoritosSeries = [];
+    let recuperoStorage = localStorage.getItem('favoritosSeries')
+    if (recuperoStorage !== null){
+         favoritosSeries = JSON.parse(recuperoStorage)
+    }       
+    if(favoritosSeries.includes(id)){
+         favoritosSeries = favoritosSeries.filter(unId => unId !== id )
+         this.setState({
+             textoBoton: "Agregar a favoritos"
+         })
+    } else {
+         favoritosSeries.push(id);
+         this.setState({
+             textoBoton: "Quitar de favoritos"
+         })
+    }
+
+    let favoritosSeriesString = JSON.stringify(favoritosSeries);
+         localStorage.setItem('favoritosSeries', favoritosSeriesString)
 
 }
-
-
-
     render(){
         return(
                 <article className = "container">
