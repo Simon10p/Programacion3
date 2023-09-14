@@ -48,10 +48,9 @@ class ListaPelicula extends Component{
                 ) : (
                     <React.Fragment>
                         <h1>Peliculas mas valoradas</h1>
-                    <div>
-                        
+                    <div> 
                         {this.state.data.map((unPelicula) => (
-                            <MovieCard key={unPelicula.id} datosPelicula={unPelicula} img={unPelicula.poster_path} />
+                        <MovieCard key={unPelicula.id} datosPelicula={unPelicula} img={unPelicula.poster_path} />
                         ))}
                     </div>
                     </React.Fragment>

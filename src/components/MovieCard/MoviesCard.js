@@ -11,18 +11,18 @@ class MovieCard extends Component {
         super(props);
         this.state = {
             textoBoton: "Agregar a favoritos",
-            mas: false
+            stateMas: false
         }
     }
     
     verMas(){
         this.setState({
-            mas : true
+            stateMas : true
         })
     }
     verMenos(){
         this.setState({
-            mas : false
+            stateMas : false
         })
     }
 
@@ -71,13 +71,14 @@ class MovieCard extends Component {
             <p> {this.props.datosPelicula.title} </p>
             <button onClick={()=>this.ModificarFavoritos(this.props.datosPelicula.id)} type='button'>{this.state.textoBoton}</button>
             {
-                this.state.mas === false ?
+                this.state.stateMas === false ?
                 (<button onClick={() => this.verMas()}>
                     Ver sinopsis
                 </button>)
                 :
                 (<div>
-                <p>{this.props.datosPelicula.overview}</p>
+                <p>{this.props.datosPelicula.overview} </p>
+        
                 <button onClick={() => this.verMenos()}>Ver menos </button>
                 </div> )      
             }

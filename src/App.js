@@ -19,14 +19,14 @@ function App() {
     <Navbar />
 <Switch>
 <Route path="/" exact={true} component={Home} />
-<Route path="/busqueda" component={Busqueda} />
+<Route path="/ResultadosBusqueda/:userImput" component={Busqueda} />
 <Route path="/verTodasPeliculas" component={VerPeliculas} />
 <Route path="/verTodasSeries" component={VerSeries} />
 <Route path="/detalleSerie/:id" component={DetalleSerie} />
 <Route path="/detallePelicula/:id" component={DetallePelicula} />
 <Route path="/favoritos" component={Favoritos} />
-<Route path="/notFound" component={NotFound} />
 <Route path="/cargando" component={Cargando} />
+<Route path="" component={NotFound} />
 </Switch>
 <Footer/>
   </React.Fragment>

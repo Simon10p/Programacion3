@@ -12,21 +12,16 @@ class FormularioBusqueda extends Component{
 
     controlarEnvio(evento){
         evento.preventDefault();
-        console.log("No me mandé");
     }
 
     guardarDatosDelInput(eventoEnElInput){
         this.setState({
             textoDelInput: eventoEnElInput.target.value
         })
-
-       // console.log(this.state.textoDelInput);
-
         return true
     }
 
     render(){
-        // console.log(this.props);
         return(
               <div className="iBusqueda">
               <form className="busqueda"  method="GET" onSubmit={(event) => this.controlarEnvio(event)}>

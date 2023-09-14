@@ -26,7 +26,7 @@ class ListaFavs extends Component {
           listaFavoritos.push(favorita);
           this.setState({ favorita: listaFavoritos });
         })
-        .catch((error) => console.log(error));
+        .catch(error => console.log(error));
     });
     // lo de map que agregue no se si esta bien
   }
@@ -37,12 +37,14 @@ class ListaFavs extends Component {
         {this.state.favorita.length === 0 ? (
           <p>No tiene favoritos guardados</p>
         ) : (
+          <React.Fragment>
+         <h1>Tus favoritos:</h1>
           <div>
-            <h1>Tus favoritos:</h1>
-            <div>
-              <MoviesCard datosPelicula={this.state.favorita} img={this.state.favorita.poster_path} />
-            </div>
-          </div>
+            {this.state.favorita.map((unPelicula) => (
+          <MoviesCard  key={unPelicula.id} datosPelicula={unPelicula.favorita} img={unPelicula.poster_path} />
+            ))}
+            </div> 
+          </React.Fragment>       
         )}
       </section>
     );
