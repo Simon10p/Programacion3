@@ -47,7 +47,9 @@ class VerSeries extends Component{
     }
 
     render(){ 
+        console.log(this.state.series);
         return(
+            
             <React.Fragment>
             <Filtro filtrar={(texto) => this.filtrarSeries(texto)} />
             {  this.state.series.length > 0? ( 
@@ -55,7 +57,7 @@ class VerSeries extends Component{
                 {this.state.series.map((unaSerie, indice) => { 
                     if (indice < this.state.idx) {
                     return (
-                        <SeriesCard key={unaSerie.id} datosPelicula={unaSerie} img={unaSerie.poster_path} />
+                        <SeriesCard key={unaSerie.id} datosSerie={unaSerie} img={unaSerie.poster_path} />
                     );
                 }   
                 return null; 
