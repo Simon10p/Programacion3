@@ -47,13 +47,16 @@ class VerSeries extends Component{
     }
 
     render(){ 
-        console.log(this.state.series);
+
         return(
-            
-            <React.Fragment>
-            <Filtro filtrar={(texto) => this.filtrarSeries(texto)} />
+            <section className="container_padre">
+           
             {  this.state.series.length > 0? ( 
-            <section>
+                <React.Fragment>
+                     <h1>Todas las series</h1>
+                     <Filtro filtrar={(texto) => this.filtrarSeries(texto)} />
+            <button onClick={()=>this.verMas(this.state.series)} className="ver-mas-boton" > Ver más</button>
+            <div className="contenedorTodas">
                 {this.state.series.map((unaSerie, indice) => { 
                     if (indice < this.state.idx) {
                     return (
@@ -62,12 +65,13 @@ class VerSeries extends Component{
                 }   
                 return null; 
                 })}
-                <button onClick={()=>this.verMas(this.state.series)} className="boton" > Ver más</button>
-            </section>) 
+            </div>
+                </React.Fragment>
+               ) 
             : (
                 <p>Problema: Error</p>
             )}
-            </React.Fragment>
+            </section>
         )
     }
 }

@@ -34,14 +34,14 @@ class ResultadosBusqueda extends Component {
         {this.state.movieResults.length === 0 ? (
           <p>No hay peliculas que coincidan con tu busqueda: {this.props.busquedaUsuario} </p>
         ) : (
-          <div>
-            <h1>Peliculas:</h1>
+          <React.Fragment>
+              <h1>Peliculas:</h1>
             <div>
               {this.state.movieResults.map((unPelicula) => (
               <MoviesCard  key={unPelicula.id} datosPelicula={unPelicula} img={unPelicula.poster_path} />
             ))}
             </div> 
-          </div>   
+          </React.Fragment>   
           
           
         )}
@@ -51,14 +51,14 @@ class ResultadosBusqueda extends Component {
         {this.state.TVResults.length === 0 ? (
           <p>No hay series que conincidan con tu busqueda: {this.props.busquedaUsuario} </p>
         ) : (
-          <div>
+          <React.Fragment>
             <h1>Series:</h1>
             <div>
               {this.state.TVResults.map((unSerie) => (
               <SeriesCard key={unSerie.id} datosSerie={unSerie} img={unSerie.poster_path} />
             ))}
             </div> 
-          </div>   
+          </React.Fragment>   
           
           
         )}

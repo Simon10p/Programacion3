@@ -1,5 +1,3 @@
-import Navbar from "../../components/Navbar/Navbar";
-import Footer from "../../components/Footer/Footer";
 import ResultadosBusqueda from "../../components/ResultadosBusqueda/ResultadosBusqueda"
 
 function Busqueda(props){

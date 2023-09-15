@@ -1,0 +1,4 @@
+.contenedorFavoritas{
+    display:flex;
+    flex-wrap: wrap;
+}

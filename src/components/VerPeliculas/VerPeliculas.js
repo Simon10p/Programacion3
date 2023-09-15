@@ -19,7 +19,7 @@ class VerPeliculas extends Component{
     }
 
     multimedia(){ 
-        fetch(`https://api.themoviedb.org/3/movie/popular?api_key=2a3601e42fea0b8cec36fb4c1999c023&language=en-US&page=1`)
+        fetch(`https://api.themoviedb.org/3/movie/popular?api_key=2a3601e42fea0b8cec36fb4c1999c023&language=en-US&page=${this.state.pagina}`)
         .then(response => response.json())
         .then(datos => this.setState(
             {
@@ -50,10 +50,14 @@ class VerPeliculas extends Component{
     render(){ 
         
         return(
-            <React.Fragment>
-            <Filtro filtrar={(texto) => this.filtrarPeliculas(texto)} />
+            <section className="container_padre">
+    
             {  this.state.peliculas.length > 0? ( 
-            <section>
+                    <React.Fragment>      
+            <h1>Todas las peliculas</h1> 
+            <Filtro filtrar={(texto) => this.filtrarPeliculas(texto)} />
+            <button onClick={()=>this.verMas(this.state.peliculas)} className="ver-mas-boton" > Ver más</button>                
+            <div className="contenedorTodas">
                 {this.state.peliculas.map((unPelicula, indice) => { 
                     if (indice < this.state.idx) {
                     return (
@@ -62,12 +66,15 @@ class VerPeliculas extends Component{
                 }   
                 return null; 
                 })}
-                <button onClick={()=>this.verMas(this.state.peliculas)} className="boton" > Ver más</button>
-            </section>) 
+            </div>
+                    </React.Fragment>
+        
+         ) 
             : (
                 <p>Problema: Error</p>
             )}
-            </React.Fragment>
+
+</section>
         )
     }
 }

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import MoviesCard from "../MovieCard/MoviesCard";
 import SeriesCard from "../SeriesCard/SeriesCard";
+import "../ListaFavs/ListaFavs.css"
 
 
 class ListaFavs extends Component {
@@ -64,13 +65,13 @@ class ListaFavs extends Component {
          : 
           <React.Fragment>
          <h1>Tus peliculas favoritas:</h1>
-          <div>
+          <div className="contenedorFavoritas">
             {this.state.favoritaPelicula.map((unPelicula) => (
           <MoviesCard  key={unPelicula.id} datosPelicula={unPelicula} img={unPelicula.poster_path} />
             ))}
             </div> 
             <h1>Tus series favoritas:</h1>
-            <div>
+            <div className="contenedorFavoritas">
               {this.state.favoritaSerie.map((unSerie) => ( 
                 <SeriesCard key={unSerie.id} datosSerie={unSerie} img={unSerie.poster_path}></SeriesCard>
                ))}

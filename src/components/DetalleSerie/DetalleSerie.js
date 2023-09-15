@@ -60,7 +60,6 @@ class DetalleSerie extends Component{
             <p>Temporadas:<span className="infoPelisDetalles">{this.state.infoSerie.number_of_seasons} </span></p>
             <p className="sinopsis">Sinopsis: </p>
             <span className="infoPelisDetalles">{this.state.infoSerie.overview}</span>
-            <div className="proveedores"> <p>Donde mirar:</p></div>
             <button onClick={()=>this.ModificarFavoritos(this.props.key)} type='button'>{this.state.textoBoton}</button>
            </article>     
            </section>      

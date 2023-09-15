@@ -31,21 +31,27 @@
 }
 .detallepelis{
     display: flex;
-    padding: 0.5vh 0.976vw 0vh 0.694vw;
+    padding: 0.5vh 0.976vw 0vh 0.54vw;
 
 }
 .detallepelis p{
     color: azure;
     font-weight: bold;
 }
-
-.detallepelis button{
-    padding: 10px 20px;
-    background-color: #fff; /* Fondo blanco */
-    color: #000; /* Texto negro */
+.detallepelis button {
+    padding: 5px 10px;
+    font-size: 14px;
+    background-color: #fff;
+    color: #000;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin: 25vh;
-}
-
+    margin-left: 10px; 
+    margin-top: -2vh;
+    width:fit-content;
+  }
+  
+  .detallepelis button:hover {
+    background-color: #ddd;
+    color: #333;
+  }
