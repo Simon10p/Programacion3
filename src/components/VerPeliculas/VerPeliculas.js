@@ -8,7 +8,8 @@ class VerPeliculas extends Component{
         super();
         this.state ={
             peliculas : [],
-            pagina : 1
+            pagina : 1,
+            idx: 5
 
         }
     }
@@ -41,6 +42,9 @@ class VerPeliculas extends Component{
         console.log(this.state.peliculasFiltradas);
     }
     verMas(){
+        this.setState({
+            idx: this.state.idx + 5
+        })
         this.multimedia()
     }
     render(){ 
@@ -50,9 +54,14 @@ class VerPeliculas extends Component{
             <Filtro filtrar={(texto) => this.filtrarPeliculas(texto)} />
             {  this.state.peliculas.length > 0? ( 
             <section>
-                {this.state.peliculas.map((unPelicula)=> 
-                    <MovieCard key={unPelicula.id} datosPelicula={unPelicula} img={unPelicula.poster_path}/>)
-                }
+                {this.state.peliculas.map((unPelicula, indice) => { 
+                    if (indice < this.state.idx) {
+                    return (
+                        <MovieCard key={unPelicula.id} datosPelicula={unPelicula} img={unPelicula.poster_path} />
+                    );
+                }   
+                return null; 
+                })}
                 <button onClick={()=>this.verMas(this.state.peliculas)} className="boton" > Ver más</button>
             </section>) 
             : (
