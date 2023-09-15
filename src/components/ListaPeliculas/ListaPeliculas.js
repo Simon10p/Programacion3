@@ -1,6 +1,5 @@
 import React, {Component} from "react";
 import MovieCard from "../MovieCard/MoviesCard"
-import Filtro from "../Filtro/Filtro";
 import "../ListaPeliculas/ListaPeliculas.css"
 
 class ListaPelicula extends Component{
@@ -32,6 +31,7 @@ class ListaPelicula extends Component{
     }
 
     render() {
+        
         return (
             <section className="container_padre">
                 {this.state.data.length === 0 ? (
@@ -48,6 +48,7 @@ class ListaPelicula extends Component{
                         <h1>Peliculas mas valoradas</h1>
                     <div> 
                         {this.state.data.map((unPelicula, idx) => {
+                            console.log(unPelicula);
                          if (idx<5){
                             return( <MovieCard key={unPelicula.id} datosPelicula={unPelicula} img={unPelicula.poster_path} />)
                          }
