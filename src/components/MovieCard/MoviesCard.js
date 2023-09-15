@@ -60,6 +60,7 @@ class MovieCard extends Component {
 
        let favoritosString = JSON.stringify(favoritos);
             localStorage.setItem('favoritos', favoritosString)
+            console.log(localStorage)
     }
     
 

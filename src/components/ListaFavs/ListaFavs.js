@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import MoviesCard from "../MovieCard/MoviesCard";
 import SeriesCard from "../SeriesCard/SeriesCard";
-import Filtro from "../Filtro/Filtro";
+
 
 class ListaFavs extends Component {
   constructor(props) {
@@ -11,26 +11,32 @@ class ListaFavs extends Component {
       favoritaSerie: []
     };
   }
+  
   componentDidMount() {
     let favoritosPelis = [];
     let favoritaSerie =[];
     let recuperoStorage = localStorage.getItem("favoritos");
+    console.log(recuperoStorage);
     let recuperoStorageSeries = localStorage.getItem("favoritosSeries")
     if (recuperoStorage !== null && recuperoStorageSeries !== null) {
       favoritosPelis = JSON.parse(recuperoStorage);
       favoritaSerie = JSON.parse(recuperoStorageSeries)
+      
     }
+    console.log(favoritosPelis);
     favoritosPelis.map((id) => {
+      
       fetch(
         `https://api.themoviedb.org/3/movie/${id}?api_key=2a3601e42fea0b8cec36fb4c1999c023&language=en-US`
       )
         .then((response) => response.json())
         .then((favorita) => {   
+          console.log(favorita)
           let listaFavoritos = this.state.favoritaPelicula;
           console.log(listaFavoritos);
           listaFavoritos.push(favorita);
           console.log(listaFavoritos);
-          this.setState({ favorita: listaFavoritos });
+          this.setState({ favoritaPelicula: listaFavoritos });
         })
         .catch(error => console.log(error));
     });
