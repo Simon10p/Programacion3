@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import MovieCard from "../MovieCard/MoviesCard"
 import "../ListaPeliculas/ListaPeliculas.css"
+import { Link } from  'react-router-dom';
 
 class ListaPelicula extends Component{
     constructor(props){
@@ -45,7 +46,10 @@ class ListaPelicula extends Component{
                     ></iframe>
                 ) : (
                     <React.Fragment>
+                        <div className="tituloLink">
                         <h1>Peliculas mas valoradas</h1>
+                        <Link to={`/verTodasPeliculas`}><p className="linkVerMas">Ver todas las peliculas mas valoradas</p></Link>
+                        </div>
                     <div> 
                         {this.state.data.map((unPelicula, idx) => {
                             console.log(unPelicula);

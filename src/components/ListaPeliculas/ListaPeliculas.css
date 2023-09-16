@@ -9,4 +9,11 @@
 .container_padre div{
     display: flex;
 }
-
+.tituloLink {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+.tituloLink p{
+    text-decoration: none;
+}

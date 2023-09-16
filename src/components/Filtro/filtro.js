@@ -1,45 +1,44 @@
-import React, { Component } from 'react';
-import "./Filtro.css"
+import React, { Component } from "react";
+import "./Filtro.css";
 
-class Filtro extends Component{
+class Filtro extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      textoIngresado: "",
+    };
+  }
 
-    constructor(props){
-        super(props);
-        this.state ={
-            textoIngresado: ''
-        }
-    }
+  controlarEnvio(evento) {
+    evento.preventDefault();
+    this.props.filtrar(this.state.textoIngresado);
+  }
 
-    controlarEnvio(evento) {
-        evento.preventDefault();
-        console.log("No me mandé");
-        return true
-    }
+  guardarDatosDelInput(eventoEnElInput) {
+    this.setState(
+      {
+        textoIngresado: eventoEnElInput.target.value,
+      },
+    );
+  }
 
-    guardarDatosDelInput(eventoEnElInput){
-        this.setState({
-            textoIngresado: eventoEnElInput.target.value
-        }, () => this.props.filtrar(this.props.textoIngresado))
-
-     console.log(this.state.textoIngresado);
-
-        return true
-    }
-
-
-render(){
-        // console.log(this.props);
-        return(
-            <div className="formsBusqueda">
-            <form action="" method='GET' onSubmit={(e) => this.controlarEnvio(e)}>
-                <label htmlFor=''>Texto a filtrar: </label>
-                <input type="text" name='filtro' placeholder="texto a filtrar" onChange={(e)=>this.guardarDatosDelInput(e)} value={this.state.textoIngresado} />
-                <button type='submit'>Filtrar</button>
-            </form>
-            </div>
-        )
-    }
-
+  render() {
+    return (
+      <div className="formsBusqueda">
+        <form onSubmit={(evento) => this.controlarEnvio(evento)}>
+          <label htmlFor="">Texto a filtrar: </label>
+          <input
+            type="text"
+            name="filtro"
+            placeholder="texto a filtrar"
+            onChange={(e) => this.guardarDatosDelInput(e)}
+            value={this.state.textoIngresado}
+          />
+          <button type="submit" value="submit">Filtrar</button>
+        </form>
+      </div>
+    );
+  }
 }
 
-export default Filtro
+export default Filtro;

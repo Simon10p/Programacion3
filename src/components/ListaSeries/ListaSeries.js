@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import SeriesCard from "../SeriesCard/SeriesCard";
 import "./ListaSeries.css";
-import Filtro from '../Filtro/Filtro';
+import { Link } from  'react-router-dom';
 
 class ListaSeries extends Component{
     constructor(props){
@@ -42,7 +42,12 @@ class ListaSeries extends Component{
                         ></iframe>
                     ) : (
                         <React.Fragment>
+                            <div className="tituloLink">
                             <h1>Series mas valoradas</h1>
+                            <Link to={`/verTodasSeries`}><p className="linkVerMas">Ver todas las series mas valoradas</p></Link>
+                     
+                            </div>
+                             
                         <div>
                             {this.state.data.map((unSerie, idx) => {
                                 if(idx<5){
