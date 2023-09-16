@@ -60,7 +60,7 @@ class DetallePelicula extends Component{
             <section className="detallepelis">
         <img src={img + this.state.infoPelicula.poster_path} alt = "" className="fotoDetalle"/>
        <article className="infoPelisTitulos">
-            <p>Rating: <span className="infoPelisDetalles">  {this.state.genero}</span></p> 
+            <p>Genero: <span className="infoPelisDetalles">  {this.state.genero}</span></p> 
             <p>Año de estreno:  <span className="infoPelisDetalles">  {this.state.infoPelicula.release_date}</span></p>
             <p>Duración:<span className="infoPelisDetalles">{this.state.infoPelicula.runtime} </span></p>
             <p className="sinopsis">Sinopsis:</p>

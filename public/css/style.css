@@ -69,3 +69,38 @@ h4{
     display: flex;
     flex-wrap: wrap;
 }
+@media (max-width: 500px){
+
+    .containHeader{
+        flex-direction: column;
+    }
+    .containHeader ul{
+        flex-direction: column;
+    }
+    .iBusqueda input{
+        width: 40vw;
+        margin-left: -36vw;
+        margin-top: 2vh;
+    }
+    .container{
+        flex-direction: column;
+    
+    }
+    .foto-home{
+        width: 55vw;
+        height: 60vh;
+    }
+    .footerNombres{
+        margin-bottom: 5%;
+    }
+
+    .container-fav{
+        flex-direction: column;
+
+    }
+    .detallepelis{
+        flex-direction: column;
+    }
+  
+}
+
