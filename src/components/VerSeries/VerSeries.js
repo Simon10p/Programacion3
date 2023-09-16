@@ -77,7 +77,14 @@ class VerSeries extends Component {
             </div>
           </React.Fragment>
         ) : (
-          <p>Problema: Error</p>
+            <iframe
+            src="https://giphy.com/embed/W22b2eea2XxB6DiTWg"
+            width="280"
+            height="280"
+            frameBorder="0"
+            className="giphy-embed"
+            allowFullScreen
+        ></iframe>
         )}
       </section>
     );
