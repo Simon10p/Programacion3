@@ -11,6 +11,7 @@ class ResultadosBusqueda extends Component {
     };
   }
 
+  
   componentDidMount() {
     fetch(`https://api.themoviedb.org/3/search/movie?query=${this.props.busquedaUsuario}&api_key=a3c55e0abc72e6abaa573f83ee40635f&language=en-US&page=1&include_adult=false`)
             .then(response => response.json())
